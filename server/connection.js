@@ -146,8 +146,8 @@ app.get('/coindetails/:id',async function(request,response){
     }
     else{
      response.status(404).json({
-       "status":"failure",
-       "mesage":"coin item not found"
+       status:"failure",
+       mesage:"coin item not found"
      })
     }
     }
