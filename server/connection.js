@@ -4,15 +4,18 @@ const {Coins}=require("./schema.js");
 const bodyParser = require("body-parser");
 const cors=require("cors");
 const app=express();
+require('dotenv').config();
+
+
 
 app.use(bodyParser.json())
 app.use(cors());
 
     async function connectdb(){
         try{
-        await mongoose.connect("mongodb+srv://CoinGalaxy:DevTrio@cluster0.z9kbeyv.mongodb.net/CoinGalaxy?retryWrites=true&w=majority&appName=Cluster0")
+        await mongoose.connect(process.env.Mongo_Url)
          console.log("db connnection success")
-         const x=process.env.PORT || 5000;
+         const x=5000;
          app.listen(x,function(){
              console.log(`starting port ${x}...`)
          })
