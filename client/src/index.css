@@ -1,0 +1,247 @@
+:root {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+/* new css */
+header{
+  width: 85%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  box-shadow: 0 0 4px rgb(222, 210, 150);
+  border-radius: 15px;
+  border: 1px solid rgb(222, 210, 150);
+  
+}
+header ul{
+
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  margin-right: 60px;
+  
+  
+}
+
+header li{
+  text-decoration: none;
+  list-style-type: none;
+}
+header li:hover{
+  text-decoration: underline;
+  text-decoration-color: rgb(222, 210, 150);
+  
+}
+.navlink{
+  text-decoration: none;
+  list-style-type: none;
+  color: black;
+  font-size: larger;
+}
+
+.navlink:hover{
+  color: rgb(222, 210, 150);
+}
+
+#logo{
+  margin-left: 20px;
+
+}
+.coinbuttons{
+  display: flex;
+  justify-content: space-around;
+ padding-top: 15px;
+  
+}
+.navbutton{
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding:30px;
+}
+.cards{
+  width: 275px;
+  height: 350px;
+  box-shadow: 0 0 8px rgb(222, 210, 150);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+}
+.homerender{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.coinimg{
+  width: 275px;
+  height:175px;
+  border-radius: 15px 15px 0px 0px;
+}
+
+.details{
+  display: flex;
+  margin-left: 10px;
+}
+.left{
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex:0.7;
+}
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content:end;
+  padding-left: 10px;
+  flex:0.3;
+}
+.buttons{
+  display: flex;
+  padding: 10px;
+  align-items: center;
+}
+
+.cointypebuttons{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+.coinicon{
+  padding: 5px;
+  width: 170px;
+  height: 50px;
+  font-size: large;
+  border: none;
+  border-radius: 25px;
+}
+
+
+/* contact */
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.contact-container h1 {
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  font-size: 19px;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  
+}
+
+.contact-options {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.contact-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+ 
+  cursor: pointer;
+}
+
+.contact-option p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-option span {
+  font-size: 16px;
+}
+
+/* about */
+
+.about-container {
+  margin: 0 auto;
+  padding: 90px ;
+  justify-content: space-around;
+  display: flex;
+
+  
+}
+
+.about-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-container h2 {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.about-container p {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+
+.logo {
+  padding: 50px;
+  width: 350px;
+  margin-top: 40px;
+}
+.cartdiv{
+  display: flex;
+ justify-content: center;
+ margin-bottom: 30px;
+}
+.cartitems{
+  width: 85%;
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cart-img{
+  height: 170px;
+  width:200px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.cartcard{
+  width:55%;
+  height: 170px;
+  display: flex;
+  gap:50px;
+  border: 1px groove rgb(222, 210, 150);
+  box-shadow: 0 0 8px rgb(222, 210, 150);
+  border-radius: 15px;
+}
+.left-cart{
+  display: flex;
+  flex-direction: column;
+}
+.rightcart{
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  
+}
