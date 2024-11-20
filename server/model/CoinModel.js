@@ -1,6 +1,9 @@
 import { Schema, model } from 'mongoose';
 
 const CoinSchema = new Schema({
+    userid:{
+        type:String,
+    },
     coinid: {
         type: Number,
     },
