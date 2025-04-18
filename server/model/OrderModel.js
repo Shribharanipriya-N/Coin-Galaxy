@@ -1,58 +1,60 @@
-import { Schema,model } from "mongoose";
+import { Schema, model } from "mongoose";
 
-const OrderSchema= new Schema({
-    orderid:{
-        type:String,
-        required:true,
+const OrderSchema = new Schema({
+    orderid: {
+        type: String,
+        require: true,
+        unique: true
     },
-    userid:{
-        type:String,
-        required:true
+    userid: {
+        type: String,
+        require: true
     },
-    email:{
-        type:String,
-        required:true,
+    email: {
+        type: String,
+        require: true,
     },
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        require: true
     },
-    phone:{
-        type:Number,
-        required:true
+    phone: {
+        type: Number,
+        require: true
     },
-    address:{
-        type:String,
-        required:true
+    address: {
+        type: String,
+        require: true
     },
-    orderDate:{
-        type:Date,
-        required:true
+    orderDate: {
+        type: Date,
+        require: true
     },
-    delDate:{
-        type:Date,
-        required:true
+    delDate: {
+        type: Date,
+        require: true
     },
-    amount:{
-        type:Number,
-
-    },
-    orderStatus:{
-        type:String,
+    amount: {
+        type: Number,
 
     },
-    products:[{
-        coinid:{
-            type:String,
-            required:true
+    orderStatus: {
+        type: String,
+
+    },
+    products: [{
+        coinid: {
+            type: String,
+            require: true
         },
-        quantity:{
-            type:Number,
-            required:true
+        quantity: {
+            type: Number,
+            require: true
         }
     }]
 
-},{timestamps:true})
+}, { timestamps: true })
 
-const OrderModel= new model(OrderSchema,"Orderdata");
-module.exports={OrderModel};
+const OrderModel = model("OrderData", OrderSchema);
+
+export default OrderModel;

@@ -1,38 +1,49 @@
 import { Schema, model } from 'mongoose';
 
 const CoinSchema = new Schema({
-    userid:{
-        type:String,
+    userid: {
+        type: String,
+        require: true
     },
     coinid: {
-        type: Number,
+        type: String,
+        require: true
     },
     title: {
         type: String,
+        require: true,
     },
     description: {
         type: String,
+        require: true,
     },
     period: {
         type: String,
+        require: true,
     },
     amount: {
         type: String,
+        require: true,
     },
     availability: {
-        type: String,
+        type: Boolean,
+        require: true,
     },
     rating: {
         type: Number,
+        require: true,
     },
     image: {
         type: String,
+        require: true,
     },
     category: {
         type: String,
+        require: true,
     }
 
 })
 
-const CoinModel = new model(CoinSchema, "CoinData");
-export default { CoinModel };
+const CoinModel = model("CoinData", CoinSchema);
+
+export default CoinModel;

@@ -4,8 +4,9 @@ const CartSchema = new Schema({
     userid: {
         type: String,
         required: true,
+        unique: true
     },
-    products: [{
+    coins: [{
         coindid: {
             type: String,
             require: true,
@@ -17,6 +18,6 @@ const CartSchema = new Schema({
     }]
 })
 
-const CartModel = new model(CartSchema, "Cartdata");
+const CartModel = model("CartData", CartSchema);
 
-module.exports = { CartModel };
+export default CartModel;

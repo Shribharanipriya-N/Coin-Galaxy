@@ -1,24 +1,24 @@
 import { Schema, model } from "mongoose";
-const bcrypt=require('bcryptjs');
+import bcrypt from 'bcryptjs';
 
 
 const UserSchema = new Schema({
     userid: {
         type: String,
-        require: true,
+        required: true,
     },
     name: {
         type: String,
-        require: true,
+        required: true,
     },
     email: {
         type: String,
-        require: true,
+        required: true,
         unique: true,
     },
     password: {
         type: String,
-        require: true
+        required: true
     }
 })
 
@@ -28,8 +28,9 @@ UserSchema.pre('save', async function (next) {
     }
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
+    next();
 })
 
-const UserModel = new model(UserSchema, "Userdata");
+const UserModel = model("UserData", UserSchema);
 
-module.exports = { UserModel };
+export default UserModel;
