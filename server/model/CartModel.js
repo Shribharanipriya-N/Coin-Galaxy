@@ -19,5 +19,4 @@ const CartSchema = new Schema({
 })
 
 const CartModel = model("CartData", CartSchema);
-
 export default CartModel;
