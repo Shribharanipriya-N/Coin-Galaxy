@@ -7,7 +7,7 @@ const CartSchema = new Schema({
         unique: true
     },
     coins: [{
-        coindid: {
+        coinid: {
             type: String,
             require: true,
         },

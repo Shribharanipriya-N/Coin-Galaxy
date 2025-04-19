@@ -5,6 +5,8 @@ import cors from "cors";
 import dotenv from 'dotenv';
 import UserRoutes from "./routes/userRoutes.js";
 import CoinRoutes from "./routes/coinRoutes.js";
+import CartRoutes from "./routes/cartRoutes.js";
+import OrderRoutes from "./routes/orderRoutes.js";
 
 dotenv.config();
 
@@ -33,6 +35,8 @@ connectdb();
 
 app.use("/", UserRoutes)
 app.use("/", CoinRoutes)
+app.use("/", CartRoutes);
+app.use("/", OrderRoutes);
 
 // app.get('/get-coins', async function (request, response) {
 //     try {
