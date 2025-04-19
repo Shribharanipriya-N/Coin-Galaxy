@@ -14,7 +14,7 @@ const addcart = async (req, res) => {
         if (cart) {
             const oldcoin = cart.coins.find(c => c.coinid === coinid);
             if (oldcoin) {
-                oldcoin.quantity += quantity;
+                oldcoin.quantity = quantity;
                 await cart.save();
                 return res.status(200).send({ message: "Item quantity updated." });
             } else {
@@ -47,13 +47,13 @@ const getcart = async (req, res) => {
             const coinDetails = await Promise.all(
                 cart.coins.map(async (item) => {
                     const coin = await Coin.findOne({ coinid: item.coinid });
-                    subtotal += coin.price * item.quantity
+                    subtotal += coin.amount * item.quantity
                     return {
                         id: coin.id,
                         title: coin.title,
                         description: coin.description,
                         image: coin.image,
-                        price: coin.price,
+                        amount: coin.amount,
                         quantity: item.quantity
                     };
 
@@ -68,7 +68,7 @@ const getcart = async (req, res) => {
     }
 };
 const deletecart = async (req, res) => {
-    const coinid = req.params;
+    const coinid = req.params.id;
     const userid = req.user.id;
     console.log(coinid, userid)
     try {
@@ -99,6 +99,20 @@ const deletecart = async (req, res) => {
 }
 
 
+const deleteentirecart = async (req, res) => {
+    const userid = req.user.id;
+    try {
+        const cart = await Cart.findOne({ userid });
+        if (cart) {
+            await Cart.deleteOne({ userid });
+            res.status(200).json({ message: "Cart removed" });
+        }
+        else
+            res.status(400).json({ message: "No cart items" });
+    }
+    catch (E) {
+        res.status(500).json({ message: "Error fetching" })
+    }
+}
 
-
-export { addcart, getcart, deletecart };
+export { addcart, getcart, deletecart, deleteentirecart };

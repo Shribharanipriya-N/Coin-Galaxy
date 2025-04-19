@@ -36,7 +36,6 @@ const OrderSchema = new Schema({
     },
     amount: {
         type: Number,
-
     },
     orderStatus: {
         type: String,
