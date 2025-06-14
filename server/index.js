@@ -20,7 +20,7 @@ async function connectdb() {
     try {
         await mongoose.connect(process.env.Mongo_Url)
         console.log("db connnection success")
-        const x = 5000;
+        const x = 6000;
         app.listen(x, function () {
             console.log(`starting port ${x}...`)
         })
